@@ -60,8 +60,8 @@ export function DataPage() {
                 Policy Compliance
               </h2>
               <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
-                Check your property's compliance with local energy and emissions
-                policies.
+                Check your property&apos;s compliance with local energy and
+                emissions policies.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
