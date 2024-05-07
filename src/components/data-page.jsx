@@ -54,48 +54,88 @@ export function DataPage() {
                   <DonutpieChart2 className="aspect-square" />
                 </div>
               </div>
+              <div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mt-16">
+                  Policy Compliance
+                </h2>
+                <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
+                  Check your property&apos;s compliance with local energy and
+                  emissions policies.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Energy Efficiency Regulations</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CrossIcon className="w-6 h-6 text-red-500" />
+                      <span>Emissions Reduction Target</span>
+                    </div>
+                    <div className="text-red-500 font-medium">
+                      Non-Compliant
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        Reduce emissions by 15% within 2 years
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Renewable Energy Mandate</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Waste Management Regulations</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Policy Compliance
+                Building Data{" "}
               </h2>
               <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
-                Check your property&apos;s compliance with local energy and
-                emissions policies.
+                This is the data available on your building.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <CheckIcon className="w-6 h-6 text-green-500" />
-                    <span>Energy Efficiency Regulations</span>
+                    <span>Year built</span>
                   </div>
-                  <span className="text-green-500 font-medium">Compliant</span>
+                  <span className="font-medium">1824</span>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <CrossIcon className="w-6 h-6 text-red-500" />
-                    <span>Emissions Reduction Target</span>
+                    <span>Estimated floor area</span>
                   </div>
-                  <div className="text-red-500 font-medium">
-                    Non-Compliant
-                    <p className="text-sm text-gray-500 dark:text-gray-400">
-                      Reduce emissions by 15% within 2 years
-                    </p>
-                  </div>
+                  <div className="font-medium">354 sq m</div>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <CheckIcon className="w-6 h-6 text-green-500" />
-                    <span>Renewable Energy Mandate</span>
+                    <span>Estimated number of floors</span>
                   </div>
-                  <span className="text-green-500 font-medium">Compliant</span>
+                  <span className="font-medium">4</span>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <CheckIcon className="w-6 h-6 text-green-500" />
-                    <span>Waste Management Regulations</span>
+                    <span>Current use</span>
                   </div>
-                  <span className="text-green-500 font-medium">Compliant</span>
+                  <span className="font-medium">domestic</span>
                 </div>
               </div>
             </div>

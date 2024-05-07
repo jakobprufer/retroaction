@@ -33,14 +33,15 @@ export function AdressLookup() {
   return (
     <section className="flex justify-center w-full py-12 md:py-24 lg:py-32">
       <div className="container space-y-8 px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex items-center">
           <div className="space-y-4 text-center md:text-left">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Estimate Your Building Refitting
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
               Enter your building number and post code to get a personalized
-              carbon estimation for your building refitting.
+              carbon estimation and policy compliance check for your building
+              RetroAction.
             </p>
             <div className="flex max-w-xl flex-col space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -61,14 +62,14 @@ export function AdressLookup() {
               </Button>
             </div>
           </div>
-          <div className="aspect-video overflow-hidden rounded-xl">
+          <div className="rounded-xl">
             <Image
               alt="Hero Image"
               className="h-full w-full object-cover"
-              height="600"
-              src="/adress.png"
+              height="800"
+              src="/adress2.png"
               style={{
-                aspectRatio: "800/600",
+                aspectRatio: "800/800",
                 objectFit: "cover",
               }}
               width="800"
