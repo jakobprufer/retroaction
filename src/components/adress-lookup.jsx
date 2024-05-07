@@ -47,14 +47,11 @@ export function AdressLookup() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="building">Building Number</Label>
-                  <Input
-                    id="building"
-                    placeholder="Enter your building number"
-                  />
+                  <Input id="building" placeholder="46" />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="postcode">Post Code</Label>
-                  <Input id="postcode" placeholder="Enter your post code" />
+                  <Input id="postcode" placeholder="WC1N 2AJ" />
                 </div>
               </div>
               <Button className="w-full" type="submit" to="/data">
