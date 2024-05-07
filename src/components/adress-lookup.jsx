@@ -27,6 +27,7 @@ To read more about using these font, please visit the Next.js documentation:
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function AdressLookup() {
   return (
@@ -61,7 +62,7 @@ export function AdressLookup() {
             </div>
           </div>
           <div className="aspect-video overflow-hidden rounded-xl">
-            <img
+            <Image
               alt="Hero Image"
               className="h-full w-full object-cover"
               height="600"
