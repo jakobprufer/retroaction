@@ -31,16 +31,16 @@ import Image from "next/image";
 
 export function AdressLookup() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="flex justify-center w-full py-12 md:py-24 lg:py-32">
       <div className="container space-y-8 px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-4 text-center md:text-left">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Estimate Your Carbon Footprint
+              Estimate Your Building Refitting
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
               Enter your building number and post code to get a personalized
-              carbon estimation for your home or business.
+              carbon estimation for your building refitting.
             </p>
             <div className="flex max-w-xl flex-col space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -57,7 +57,7 @@ export function AdressLookup() {
                 </div>
               </div>
               <Button className="w-full" type="submit">
-                Get Carbon Estimate
+                Get Estimate
               </Button>
             </div>
           </div>
