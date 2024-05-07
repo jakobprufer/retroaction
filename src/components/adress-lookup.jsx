@@ -56,7 +56,7 @@ export function AdressLookup() {
                   <Input id="postcode" placeholder="Enter your post code" />
                 </div>
               </div>
-              <Button className="w-full" type="submit">
+              <Button className="w-full" type="submit" to="/data">
                 Get Estimate
               </Button>
             </div>
