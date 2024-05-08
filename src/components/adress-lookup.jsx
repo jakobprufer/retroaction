@@ -50,9 +50,17 @@ export function AdressLookup() {
               Estimate Your Building Refitting
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Enter your building number and post code to get a personalized
+              {/* Enter your building number and post code to get a personalized
               carbon estimation and policy compliance check for your building
-              RetroAction.
+              RetroAction. */}
+              Enter your Unique Property Reference Number to get a personalized
+              carbon estimation and policy
+              {/* compliance check for your building RetroAction. You can look your
+              UPRN up{" "}
+              <a href="https://uprn.uk/" className="text-blue-300">
+                here
+              </a> */}
+              .
             </p>
             <div className="flex max-w-xl flex-col space-y-4">
               <div className="grid grid-cols-1 gap-4">
@@ -85,7 +93,7 @@ export function AdressLookup() {
                   </Label>
                   <Input
                     id="uprninput"
-                    placeholder="95510923"
+                    placeholder="10033632047"
                     onKeyUp={(e) =>
                       (e.target.value = e.target.value.replace(/\s/g, ""))
                     }

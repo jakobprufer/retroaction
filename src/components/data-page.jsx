@@ -31,10 +31,11 @@ import { ResponsivePie } from "@nivo/pie";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useNavStore } from "../app/Zustand/Zustand";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import data from "../../public/Westend.json";
 
 export function DataPage() {
   const uprn = useNavStore((state) => state.uprn);
+
   return (
     <main className="justify-center flex w-full">
       <section className="py-12 md:py-24 lg:py-32">
@@ -42,7 +43,7 @@ export function DataPage() {
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Rebuilding or RetroAction
+                Carbon Impact
               </h2>
               <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
                 Compare the carbon impact in tons of CO2 of rebuilding your
@@ -119,27 +120,47 @@ export function DataPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <span>Year built</span>
+                    <span>Estimated floor area (sq m)</span>
                   </div>
-                  <span className="font-medium">1824</span>
+                  <span className="font-medium">
+                    {
+                      data.find((item) => item.UPRN == uprn)
+                        ?.ESTIMATE_TOTAL_FLOOR_AREA_ALL
+                    }
+                  </span>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <span>Estimated floor area</span>
+                    <span>Estimated floor count</span>
                   </div>
-                  <div className="font-medium">354 sq m</div>
+                  <div className="font-medium">
+                    {
+                      data.find((item) => item.UPRN == uprn)
+                        ?.ESTIMATED_FLOOR_COUNT
+                    }
+                  </div>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <span>Estimated number of floors</span>
+                    <span>Object height (m)</span>
                   </div>
-                  <span className="font-medium">4</span>
+                  <span className="font-medium">
+                    {
+                      data.find((item) => item.UPRN == uprn)
+                        ?.MEAN_OBJECT_HEIGHT_M
+                    }
+                  </span>
                 </div>
                 <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
                   <div className="flex items-center gap-4">
-                    <span>Current use</span>
+                    <span>Dominant Activity</span>
                   </div>
-                  <span className="font-medium">domestic</span>
+                  <span className="font-medium">
+                    {
+                      data.find((item) => item.UPRN == uprn)
+                        ?.DOMINANT_ND_ACTIVITY_BY_C2_FS
+                    }
+                  </span>
                 </div>
               </div>
             </div>
