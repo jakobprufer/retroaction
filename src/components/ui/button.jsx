@@ -2,6 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import Link from "next/link";
+import { useNavStore } from "@/app/Zustand/Zustand";
 
 import { cn } from "@/lib/utils";
 
@@ -37,10 +38,14 @@ const buttonVariants = cva(
 );
 
 const Button = React.forwardRef(
-  ({ className, variant, to, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, to, uprn, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
+    const setWarning = useNavStore((state) => state.setWarning);
     return (
-      <Link href={`${to}`}>
+      <Link
+        href={`${uprn ? to : "/"}`}
+        onClick={() => (uprn ? null : setWarning(true))}
+      >
         <Comp
           className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}

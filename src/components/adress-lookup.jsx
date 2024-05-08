@@ -41,20 +41,23 @@ export function AdressLookup() {
   // const postcode = useNavStore((state) => state.postcode);
   const setUprn = useNavStore((state) => state.setUprn);
   const uprn = useNavStore((state) => state.uprn);
+  const warning = useNavStore((state) => state.warning);
   return (
     <section className="flex justify-center w-full py-12 md:py-24 lg:py-32">
       <div className="container space-y-8 px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex items-center">
           <div className="space-y-4 text-center md:text-left">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Estimate Your Building Refitting
+              Demystify Retrofit for Your Building
             </h1>
             <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
               {/* Enter your building number and post code to get a personalized
               carbon estimation and policy compliance check for your building
               RetroAction. */}
-              Enter your Unique Property Reference Number to get a personalized
-              carbon estimation and policy
+              {/* Enter your Unique Property Reference Number to get a personalized
+              carbon estimation and policy */}
+              Enter your UPRN to get a personalised estimate of cost and carbon
+              benefits and and relevant policy documents
               {/* compliance check for your building RetroAction. You can look your
               UPRN up{" "}
               <a href="https://uprn.uk/" className="text-blue-300">
@@ -100,6 +103,9 @@ export function AdressLookup() {
                     // value={uprn}
                     onChange={(e) => setUprn(e.target.value.replace(/\s/g, ""))}
                   />
+                  <div className="mt-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-red-500">
+                    {warning ? "Please enter a valid UPRN" : null}
+                  </div>
                 </div>
               </div>
               <Button
@@ -107,6 +113,7 @@ export function AdressLookup() {
                 type="submit"
                 // to={`/data?building=${building}&postcode=${postcode}`}
                 to="/data"
+                uprn={uprn}
               >
                 Get Estimate
               </Button>

@@ -30,8 +30,10 @@ import { Button } from "@/components/ui/button";
 import { ResponsivePie } from "@nivo/pie";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { useNavStore } from "../app/Zustand/Zustand";
+import { RiBardFill } from "react-icons/ri";
 
 import data from "../../public/Westend.json";
+import policy from "../../public/policy.json";
 
 export function DataPage() {
   const uprn = useNavStore((state) => state.uprn);
@@ -40,78 +42,45 @@ export function DataPage() {
     <main className="justify-center flex w-full">
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">
+            UPRN: {uprn}
+          </h1>
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Carbon Impact
-              </h2>
-              <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
-                Compare the carbon impact in tons of CO2 of rebuilding your
-                property versus retrofitting it.
-              </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">Rebuilding</h3>
-                  <DonutpieChart className="aspect-square" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">RetroAction</h3>
-                  <DonutpieChart2 className="aspect-square" />
+              <div className="bg-white p-8 rounded-xl mb-8">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
+                  Savings
+                </h2>
+                <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 py-4">
+                  Compare the cost and carbon impact of retrofitting your
+                  building versus rebuilding.
+                </p>
+                <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">Cost (£ Million)</h3>
+                    <DonutpieChart className="aspect-square" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-4">Carbon (tCO2)</h3>
+                    <DonutpieChart2 className="aspect-square" />
+                  </div>
                 </div>
               </div>
-              <div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mt-16">
-                  Policy Compliance
-                </h2>
-                <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
-                  Check your property&apos;s compliance with local energy and
-                  emissions policies.
+              <div className="bg-white p-8 rounded-xl">
+                <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
+                  Material Flows
+                </h3>
+                <p className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 py-4">
+                  See below the predicted material flows following building
+                  retrofit.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
-                    <div className="flex items-center gap-4">
-                      <CheckIcon className="w-6 h-6 text-green-500" />
-                      <span>Energy Efficiency Regulations</span>
-                    </div>
-                    <span className="text-green-500 font-medium">
-                      Compliant
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
-                    <div className="flex items-center gap-4">
-                      <CrossIcon className="w-6 h-6 text-red-500" />
-                      <span>Emissions Reduction Target</span>
-                    </div>
-                    <div className="text-red-500 font-medium">
-                      Non-Compliant
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
-                        Reduce emissions by 15% within 2 years
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
-                    <div className="flex items-center gap-4">
-                      <CheckIcon className="w-6 h-6 text-green-500" />
-                      <span>Renewable Energy Mandate</span>
-                    </div>
-                    <span className="text-green-500 font-medium">
-                      Compliant
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
-                    <div className="flex items-center gap-4">
-                      <CheckIcon className="w-6 h-6 text-green-500" />
-                      <span>Waste Management Regulations</span>
-                    </div>
-                    <span className="text-green-500 font-medium">
-                      Compliant
-                    </span>
-                  </div>
+                <div className="full-w">
+                  <img src="/MaterialFlow.svg" alt="" />
                 </div>
               </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
                 Building Data{" "}
               </h2>
               <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
@@ -163,6 +132,70 @@ export function DataPage() {
                   </span>
                 </div>
               </div>
+              <div>
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl mt-16">
+                  Relevant Policies
+                </h2>
+                <p className="max-w-[700px] py-8 text-gray-500 md:text-xl dark:text-gray-400">
+                  <RiBardFill className="text-blue-500 inline" />
+                  <span className="text-blue-500"> AI</span> matched policies
+                  for your building based on type, location and size, ordered by
+                  priority.
+                </p>
+                {policy.map((policy, index) => (
+                  <div
+                    key={index}
+                    className="flex-column justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow mb-4"
+                  >
+                    <h3 className="font-semibold mb-4 text-xl">
+                      {policy["Policy document"]}
+                    </h3>
+                    <p className="">{policy.Text}</p>
+                    <p className="text-blue-500 pt-4">See more.</p>
+                  </div>
+                ))}
+                {/* <div className="space-y-4">
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Energy Efficiency Regulations</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CrossIcon className="w-6 h-6 text-red-500" />
+                      <span>Emissions Reduction Target</span>
+                    </div>
+                    <div className="text-red-500 font-medium">
+                      Non-Compliant
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        Reduce emissions by 15% within 2 years
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Renewable Energy Mandate</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow">
+                    <div className="flex items-center gap-4">
+                      <CheckIcon className="w-6 h-6 text-green-500" />
+                      <span>Waste Management Regulations</span>
+                    </div>
+                    <span className="text-green-500 font-medium">
+                      Compliant
+                    </span>
+                  </div>
+                </div> */}
+              </div>
             </div>
           </div>
         </div>
@@ -198,8 +231,11 @@ function DonutpieChart(props) {
   return (
     <div {...props}>
       <ResponsivePie
-        data={[{ id: "2000t", value: 80 }]}
-        sortByValue
+        data={[
+          { id: "Retrofitting Cost", value: 3.5 },
+          { id: "Savings", value: 3.6 },
+        ]}
+        // sortByValue
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
         cornerRadius={3}
         innerRadius={0.5}
@@ -207,10 +243,10 @@ function DonutpieChart(props) {
         borderWidth={1}
         borderColor={"#ffffff"}
         enableArcLinkLabels={false}
-        arcLabel={(d) => `${d.id}`}
+        arcLabel={(d) => `${d.value}`}
         arcLabelsTextColor={"#ffffff"}
         arcLabelsRadiusOffset={0.5}
-        colors={["#e11d48"]}
+        colors={["#000", "#15b8a6"]}
         theme={{
           labels: {
             text: {
@@ -239,10 +275,10 @@ function DonutpieChart2(props) {
     <div {...props}>
       <ResponsivePie
         data={[
-          { id: "1500t", value: 75 },
-          { id: "", value: 25 },
+          { id: "Retrofitting Emissions", value: 693 },
+          { id: "Savings", value: 1386 },
         ]}
-        sortByValue
+        // sortByValue
         margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
         cornerRadius={3}
         innerRadius={0.5}
@@ -250,10 +286,10 @@ function DonutpieChart2(props) {
         borderWidth={1}
         borderColor={"#ffffff"}
         enableArcLinkLabels={false}
-        arcLabel={(d) => `${d.id}`}
+        arcLabel={(d) => `${d.value}`}
         arcLabelsTextColor={"#ffffff"}
         arcLabelsRadiusOffset={0.5}
-        colors={["#0E86F5", "000"]}
+        colors={["#000", "#15b8a6"]}
         theme={{
           labels: {
             text: {

@@ -7,4 +7,6 @@ export const useNavStore = create((set) => ({
   setPostcode: (postcode) => set({ postcode }),
   uprn: "",
   setUprn: (uprn) => set({ uprn }),
+  warning: false,
+  setWarning: (warning) => set({ warning }),
 }));
