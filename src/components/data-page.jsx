@@ -47,7 +47,7 @@ export function DataPage() {
           </h1>
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
-              <div className="bg-white p-8 rounded-xl mb-8">
+              <div className="bg-white p-8 rounded-xl mb-8  dark:bg-gray-900">
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
                   Savings
                 </h2>
@@ -66,7 +66,7 @@ export function DataPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-xl">
+              <div className="bg-white p-8 rounded-xl  dark:bg-gray-900">
                 <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
                   Material Flows
                 </h3>
@@ -78,7 +78,7 @@ export function DataPage() {
                   <img src="/MaterialFlow.svg" alt="" />
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-xl mt-8">
+              <div className="bg-white p-8 rounded-xl mt-8  dark:bg-gray-900">
                 <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl mb-8">
                   Building Geometry
                 </h3>
