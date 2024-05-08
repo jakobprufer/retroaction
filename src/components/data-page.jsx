@@ -148,7 +148,7 @@ export function DataPage() {
                     className="flex-column justify-between bg-white dark:bg-gray-900 p-4 rounded-lg shadow mb-4"
                   >
                     <h3 className="font-semibold mb-4 text-xl">
-                      {policy["Policy document"]}
+                      {policy["Policy document"]} - {policy["Number"]}
                     </h3>
                     <p className="">{policy.Text}</p>
                     <p className="text-blue-500 pt-4">See more.</p>
