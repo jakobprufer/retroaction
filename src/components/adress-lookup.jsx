@@ -57,7 +57,7 @@ export function AdressLookup() {
               {/* Enter your Unique Property Reference Number to get a personalized
               carbon estimation and policy */}
               Enter your UPRN to get a personalised estimate of cost and carbon
-              benefits and and relevant policy documents
+              benefits and relevant policy documents
               {/* compliance check for your building RetroAction. You can look your
               UPRN up{" "}
               <a href="https://uprn.uk/" className="text-blue-300">
