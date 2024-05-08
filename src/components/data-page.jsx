@@ -78,6 +78,16 @@ export function DataPage() {
                   <img src="/MaterialFlow.svg" alt="" />
                 </div>
               </div>
+              <div className="bg-white p-8 rounded-xl mt-8">
+                <h3 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl mb-8">
+                  Building Geometry
+                </h3>
+                <div className="full-w">
+                  <img src="/initial.jpg" alt="" className="mb-4" />
+                  <img src="/old.jpg" alt="" className="mb-4" />
+                  <img src="/new.jpg" alt="" />
+                </div>
+              </div>
             </div>
             <div>
               <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl">
