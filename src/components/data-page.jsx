@@ -29,8 +29,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ResponsivePie } from "@nivo/pie";
 import { RiCloseLargeFill } from "react-icons/ri";
+import { useNavStore } from "../app/Zustand/Zustand";
+
+import { useRouter, useSearchParams } from "next/navigation";
 
 export function DataPage() {
+  const uprn = useNavStore((state) => state.uprn);
   return (
     <main className="justify-center flex w-full">
       <section className="py-12 md:py-24 lg:py-32">

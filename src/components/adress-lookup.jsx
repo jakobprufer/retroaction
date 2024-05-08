@@ -28,8 +28,19 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
+import { useNavStore } from "../app/Zustand/Zustand";
 
 export function AdressLookup() {
+  // const router = useRouter();
+
+  //use store
+  // const setBuilding = useNavStore((state) => state.setBuilding);
+  // const building = useNavStore((state) => state.building);
+  // const setPostcode = useNavStore((state) => state.setPostcode);
+  // const postcode = useNavStore((state) => state.postcode);
+  const setUprn = useNavStore((state) => state.setUprn);
+  const uprn = useNavStore((state) => state.uprn);
   return (
     <section className="flex justify-center w-full py-12 md:py-24 lg:py-32">
       <div className="container space-y-8 px-4 md:px-6">
@@ -44,17 +55,51 @@ export function AdressLookup() {
               RetroAction.
             </p>
             <div className="flex max-w-xl flex-col space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-1 gap-4">
+                {/* <div className="space-y-2">
                   <Label htmlFor="building">Building Number</Label>
-                  <Input id="building" placeholder="46" />
-                </div>
-                <div className="space-y-2">
+                  <Input
+                    id="building"
+                    placeholder="46"
+                    value={building}
+                    onChange={(e) => setBuilding(e.target.value)}
+                  />
+                </div> */}
+                {/* <div className="space-y-2">
                   <Label htmlFor="postcode">Post Code</Label>
-                  <Input id="postcode" placeholder="WC1N 2AJ" />
+                  <Input
+                    id="postcode"
+                    placeholder="WC1N2AJ"
+                    onKeyUp={(e) =>
+                      (e.target.value = e.target.value.replace(/\s/g, ""))
+                    }
+                    value={postcode}
+                    onChange={(e) =>
+                      setPostcode(e.target.value.replace(/\s/g, ""))
+                    }
+                  />
+                </div> */}
+                <div className="w-full">
+                  <Label htmlFor="postcode">
+                    Unique Property Reference Number (UPRN)
+                  </Label>
+                  <Input
+                    id="uprninput"
+                    placeholder="95510923"
+                    onKeyUp={(e) =>
+                      (e.target.value = e.target.value.replace(/\s/g, ""))
+                    }
+                    // value={uprn}
+                    onChange={(e) => setUprn(e.target.value.replace(/\s/g, ""))}
+                  />
                 </div>
               </div>
-              <Button className="w-full" type="submit" to="/data">
+              <Button
+                className="w-full"
+                type="submit"
+                // to={`/data?building=${building}&postcode=${postcode}`}
+                to="/data"
+              >
                 Get Estimate
               </Button>
             </div>
