@@ -42,10 +42,13 @@ export function DataPage() {
     <main className="justify-center flex w-full">
       <section className="py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-8">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-2">
             {/* UPRN: {uprn} */}
             21 Albemarle Street
           </h1>
+          <div className="text-2xl sm:text-xl md:text-xl mb-8 text-gray-500 dark:text-gray-400">
+            City of Westminster, London W1S 4BS
+          </div>
           <div className="grid gap-8 lg:grid-cols-2">
             <div>
               <div className="bg-white p-8 rounded-xl mb-8  dark:bg-gray-900">
